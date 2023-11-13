@@ -1,0 +1,76 @@
+.title
+{
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    
+}
+.myProjectContainer
+{
+    margin-top: 50px;
+    color: rgb(39, 39, 39);
+
+}
+.content
+{
+    background-color: red;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 30px;
+
+}
+
+.content_elem
+{
+    display: inline-block;
+    width: 400px;
+    height: 250px; 
+    margin: 0;
+    background-color: blue;
+}
+.content_elem_1
+{
+    background-color: green;
+
+}
+@media (max-width: 1210px) {
+    .content
+    {
+        max-width: 900px;
+
+    }
+    .content_elem
+    {
+       width: 300px;
+
+    }
+}
+
+@media (max-width: 900px) {
+    .content
+    {
+        max-width: 700px;
+
+    }
+    .content_elem
+    {
+       width: 350px;
+
+    }
+}
+
+@media (max-width: 700px) {
+    .content
+    {
+        width: 100%;
+
+    }
+    .content_elem
+    {
+       display: block;
+       width: 100%;
+       max-width: 350px;
+       margin: 0 auto;
+       margin-top: 20px;
+    }
+}
