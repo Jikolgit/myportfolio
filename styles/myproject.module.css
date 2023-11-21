@@ -7,13 +7,14 @@
 }
 .myProjectContainer
 {
+    scroll-margin-top: 70px;
     margin-top: 50px;
     color: rgb(39, 39, 39);
 
 }
 .content
 {
-    background-color: red;
+    
     max-width: 1200px;
     margin: 0 auto;
     margin-top: 30px;
@@ -22,16 +23,93 @@
 
 .content_elem
 {
+    box-sizing: border-box;
     display: inline-block;
     width: 400px;
     height: 250px; 
+    padding: 10px;
     margin: 0;
-    background-color: blue;
+    overflow: hidden;
 }
 .content_elem_1
 {
-    background-color: green;
+   position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.content_elem_1_desc
+{
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: -100%;
+    background-color: #17234dbf;
+    transition: bottom 0.5s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.content_elem_1:hover .content_elem_1_desc
+{
+    bottom: 0%;
+}
+.content_elem_1_titledesc
+{
+    height: 40%;
+    
+}
+.content_elem_1_title
+{
+   
+    color: rgb(18, 18, 18);
+    font-size: 1.4rem;
+    padding-left: 10px;
+    font-weight: bold;
+    background-color: #FF8E25;
 
+}
+.content_elem_1_Elemdesc
+{
+    
+    padding-left: 10px;
+    margin-top: 10px;
+    color: white;
+}
+.content_elem_1_linkContainer
+{
+    height: 60%;
+    text-align: center;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.content_elem_1_button
+{
+    
+    font-size: 1.4rem;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100px;
+    border-radius: 10px;
+    margin: 0 auto;
+    color: white;
+    background-color: rgb(22, 22, 22);
+    cursor: pointer;
+}
+.content_elem_1_button:hover
+{
+    border: 1px solid #FF8E25;
+    color: #FF8E25;
+
+}
+
+.content_elem_1_img
+{
+    width: 100%;
+    height: 100%;
 }
 @media (max-width: 1210px) {
     .content
