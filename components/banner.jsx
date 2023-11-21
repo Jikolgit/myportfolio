@@ -61,7 +61,7 @@ export function Banner()
                                                 {textToType}
                                         </div>
                                 </div>
-                                <Canvas shadows >
+                                {/* <Canvas shadows >
                                         
                                         
                                 <color attach="background" args={['#3f7b9d']} />
@@ -71,7 +71,7 @@ export function Banner()
                                                 
                                                 <AddDesktop />
                                         
-                                </Canvas>
+                                </Canvas> */}
                     </div>
          
 }
