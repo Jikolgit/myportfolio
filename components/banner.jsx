@@ -70,10 +70,10 @@ function PixiApp(props)
         
         return (
                 <Stage width={_width} height={_height} options={{ backgroundAlpha: 0 }}>
-                        <PixiIcon x={10} y={10} direction={'RIGHT-UP'} logo={"logo-js-svg.svg"} width={_width} height={_height} />
-                        <PixiIcon x={_width-70} y={50} direction={'LEFT-UP'} logo={"logo-react-col.png"} width={_width} height={_height} />
-                        <PixiIcon x={10} y={200} direction={'RIGHT-DOWN'} logo={"logo-laravel-col.png"} width={_width} height={_height} />
-                        <PixiIcon x={_width-70} y={200} direction={'LEFT-DOWN'} logo={"logo-html5-col.png"} width={_width} height={_height} />
+                        <PixiIcon x={10} y={10} direction={'RIGHT-UP'} logo={"logo-js-svg2.svg"} width={_width} height={_height} />
+                        <PixiIcon x={_width-70} y={50} direction={'LEFT-UP'} logo={"logo-react-svg.svg"} width={_width} height={_height} />
+                        <PixiIcon x={10} y={200} direction={'RIGHT-DOWN'} logo={"logo-laravel-svg.svg"} width={_width} height={_height} />
+                        <PixiIcon x={_width-70} y={200} direction={'LEFT-DOWN'} logo={"logo-html5-svg.svg"} width={_width} height={_height} />
             
                   
                 </Stage>
