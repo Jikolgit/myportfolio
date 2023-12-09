@@ -36,7 +36,7 @@ export function AboutMe()
                                <div className={styles.title_2}>Compétences 👩‍💻</div>
                                <div className={styles.content_2}>
                                         <SkillElem imglink={'logo-html5-col.png'} />
-                                        <SkillElem imglink={'logo-js-col.png'} />
+                                        <SkillElem imglink={'logo-js-col1.png'} />
                                         <SkillElem imglink={'logo-react-col.png'} />
                                         <SkillElem imglink={'logo-laravel-col.png'} />
                                         
