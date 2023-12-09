@@ -7,46 +7,14 @@ export function MyProject()
         return      <div id='anchor_2' className={styles.myProjectContainer}>
                                <div className={styles.title}>Mes projets 👷‍♂️</div>
                                <div className={styles.content}>
-                                     <div className={`${styles.content_elem}`}>
-                                            <div className={`${styles.content_elem_1}`}>
-                                                   <div className={styles.content_elem_1_desc}>
-                                                            
-                                                            <div className={styles.content_elem_1_titledesc}>
-                                                                  <div className={styles.content_elem_1_title}>
-                                                                        Webdu229
-                                                                  </div>
-                                                                  <div className={styles.content_elem_1_Elemdesc}>
-                                                                        Faire la promotion de la culture Béninoise à travers des jeux et applications,
-                                                                        tel est l'objectif de Webdu229 
-                                                                  </div>
-                                                            </div>
-                                                            <div className={styles.content_elem_1_linkContainer}>
-                                                                  <div className={styles.content_elem_1_button}>Voir</div>
-                                                            </div>
-                                                   </div>
-                                                   <img className={`${styles.content_elem_1_img}`} src='c1_1.jpeg'></img>
-                                            </div>
-                                     </div>
-
-                                     <div className={`${styles.content_elem}`}>
-                                            <div className={`${styles.content_elem_1}`}>
-                                                   <div className={styles.content_elem_1_desc}>
-                                                            
-                                                            <div className={styles.content_elem_1_titledesc}>
-                                                                  <div className={styles.content_elem_1_title}>
-                                                                        Le musée du Web
-                                                                  </div>
-                                                                  <div className={styles.content_elem_1_Elemdesc}>
-                                                                        Un espace 3D vous donnant un aperçus de quelques oeuvres d'Art béninoises
-                                                                  </div>
-                                                            </div>
-                                                            <div className={styles.content_elem_1_linkContainer}>
-                                                                  <div className={styles.content_elem_1_button}>Voir</div>
-                                                            </div>
-                                                   </div>
-                                                   <img className={`${styles.content_elem_1_img}`} src='c1_2.jpeg'></img>
-                                            </div>
-                                     </div>
+                                     
+                                     <ExportElem title={"Webdu229"} desc={"Faire la promotion de la culture Béninoise à travers des jeux et applications,tel est l'objectif de Webdu229"} 
+                                     imglink={'c1_1.jpeg'} sitelink={'https://web229.vercel.app/'}/>
+                                     <ExportElem title={"Le musée du Web"} desc={"Un espace 3D vous donnant un aperçus de quelques oeuvres d'Art béninoises"} 
+                                     imglink={'c1_2.jpeg'} sitelink={'https://museedu229.vercel.app/'} />
+                                     <ExportElem title={"Chop Master"} desc={"Un espace 3D vous donnant un aperçus de quelques oeuvres d'Art béninoises"} 
+                                     imglink={'c1_3.png'} sitelink={'https://chopmaster.vercel.app/'} />
+                                     
                                      
 
                                </div>
@@ -54,4 +22,39 @@ export function MyProject()
  
                     </div>
          
+}
+
+function ExportElem(props)
+{
+            
+                        
+              return    <>
+
+                              <div className={`${styles.content_elem}`}>
+                                    <div className={`${styles.content_elem_1}`}>
+                                          <div className={styles.content_elem_1_desc}>
+                                                
+                                                <div className={styles.content_elem_1_titledesc}>
+                                                      <div className={styles.content_elem_1_title}>
+                                                            {props.title}
+                                                      </div>
+                                                      <div className={styles.content_elem_1_Elemdesc}>
+                                                            {props.desc}
+                                                      </div>
+                                                </div>
+                                                <div className={styles.content_elem_1_linkContainer}>
+                                                      <div className={styles.content_elem_1_button}>
+                                                            <a className={styles.content_elem_1_button_link} target='_blank' href={props.sitelink} >Voir</a>
+                                                      </div>
+                                                </div>
+                                          </div>
+                                          <img className={`${styles.content_elem_1_img}`} src={props.imglink} ></img>
+                                    </div>
+                              </div>
+                              
+
+                        </>
+
+
+                  
 }

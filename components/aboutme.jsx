@@ -35,10 +35,15 @@ export function AboutMe()
 
                                <div className={styles.title_2}>Compétences 👩‍💻</div>
                                <div className={styles.content_2}>
-                                        <img className={styles.content_2_img} src='logohtml5.png' alt='logo'></img>
+                                        <SkillElem imglink={'logo-html5-col.png'} />
+                                        <SkillElem imglink={'logo-js-col.png'} />
+                                        <SkillElem imglink={'logo-react-col.png'} />
+                                        <SkillElem imglink={'logo-laravel-col.png'} />
+                                        
+                                        {/* <img className={styles.content_2_img} src='logohtml5.png' alt='logo'></img>
                                         <img className={styles.content_2_img} src='logojs.png' alt='logo'></img>
                                         <img className={styles.content_2_img} src='logoreact.png' alt='logo'></img>
-                                        <img className={styles.content_2_img} src='logolaravel.png' alt='logo'></img>
+                                        <img className={styles.content_2_img} src='logolaravel.png' alt='logo'></img> */}
 
                                </div>
 
@@ -47,6 +52,17 @@ export function AboutMe()
          
 }
 
+function SkillElem(props)
+{
+        return(
+            <div className={styles.skillContainer}>
+                <div className={styles.skillElem}>
+                    <img className={styles.skillContainerimg} src={props.imglink} ></img>
+                </div>
+            </div>
+            
+        )
+}
 
 function PixiApp()
 {

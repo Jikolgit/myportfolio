@@ -8,8 +8,8 @@ import { Stage, Container, Sprite, Text, useTick } from '@pixi/react';
 
 export function Banner()
 {
-     
-     let texte = " Donnez une nouvelle dimension à votre présence en ligne ";
+     let activateOnce = useRef(false);
+     let texte = " Donnez une nouvelle dimension à votre présence en ligne. ";
      let letterIndex = useRef(0);
      let textToshow = useRef("");
      let pixiAppRef = useRef(null);
@@ -42,9 +42,13 @@ export function Banner()
      useEffect(()=>
      {
         
-        //typeText()
-      
-        setpixiApp(c=> c =<PixiApp containerRef = {pixiAppRef} />  )
+        typeText()
+        if(!activateOnce.current)
+        {
+           activateOnce.current = true;
+           setpixiApp(c=> c =<PixiApp containerRef = {pixiAppRef} />  )
+        }
+        
 
      },[textToshow.current])
         return      <div className={styles.bannercontainer}>
