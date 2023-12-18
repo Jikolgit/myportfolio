@@ -39,6 +39,7 @@ export function AboutMe()
                                         <SkillElem imglink={'logo-js-col1.png'} />
                                         <SkillElem imglink={'logo-react-col.png'} />
                                         <SkillElem imglink={'logo-laravel-col.png'} />
+                                        <SkillElem imglink={'logo-nodejs.png'} />
                                         
                                         {/* <img className={styles.content_2_img} src='logohtml5.png' alt='logo'></img>
                                         <img className={styles.content_2_img} src='logojs.png' alt='logo'></img>
