@@ -21,7 +21,7 @@ export function AboutMe()
                                       </div>
                                       <div className={styles.content_text} >
                                                 <div className={styles.content_text_1}>
-                                                        Moi c'est Abdel BIO, fondateur de Webdu229. Je designe et développe 
+                                                        Moi c'est Abdel BIO, fondateur de Muséedu229. Je designe et développe 
                                                         des sites web. Artisan du web depuis 5 ans.
                                                 </div>
                                                 <div className={styles.content_text_2}>

@@ -20,7 +20,7 @@ export function NavBar()
         }
         let openMobileMenu = function (evt)
         {
-                console.log(mobileMenuOpen.current)
+            
                 evt.preventDefault()
                 
                 if(!mobileMenuOpen.current)

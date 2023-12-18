@@ -8,11 +8,11 @@ export function MyProject()
                                <div className={styles.title}>Mes projets 👷‍♂️</div>
                                <div className={styles.content}>
                                      
-                                     <ExportElem title={"Webdu229"} desc={"Faire la promotion de la culture Béninoise à travers des jeux et applications,tel est l'objectif de Webdu229"} 
-                                     imglink={'c1_1.jpeg'} sitelink={'https://web229.vercel.app/'}/>
+                                     {/* <ExportElem title={"Webdu229"} desc={"Faire la promotion de la culture Béninoise à travers des jeux et applications,tel est l'objectif de Webdu229"} 
+                                     imglink={'c1_1.jpeg'} sitelink={'https://webdu229.vercel.app/'}/> */}
                                      <ExportElem title={"Le musée du Web"} desc={"Un espace 3D vous donnant un aperçus de quelques oeuvres d'Art béninoises"} 
                                      imglink={'c1_2.jpeg'} sitelink={'https://museedu229.vercel.app/'} />
-                                     <ExportElem title={"Chop Master"} desc={"Un espace 3D vous donnant un aperçus de quelques oeuvres d'Art béninoises"} 
+                                     <ExportElem title={"Chop Master"} desc={"Un mini Jeux 3D pour passer le temp 🕹"} 
                                      imglink={'c1_3.png'} sitelink={'https://chopmaster.vercel.app/'} />
                                      
                                      
