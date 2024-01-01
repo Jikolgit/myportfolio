@@ -9,8 +9,8 @@ import { Contact } from '@/components/contact'
 import { _Footer } from '@/components/footer'
 import { createContext, useState } from 'react'
 
-
-export let indexContext = createContext();
+let vAny: any = null;
+export let indexContext = createContext(vAny);
 
 export default function Home() {
 
