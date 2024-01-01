@@ -1,17 +1,26 @@
 import styles from '@/styles/aboutme.module.css';
 import * as PIXI from 'pixi.js';
 import Link from 'next/link'
-import { useEffect } from 'react';
+import { useContext, useEffect, useRef } from 'react';
+import { aboutmetext } from './text';
+import { indexContext } from '@/pages/index.tsx';
+
 
 export function AboutMe()
 {
+        let valContext = useContext(indexContext)
+        let langSrc = useRef(aboutmetext.FR);
      
-        useEffect(()=>
+        if(valContext.lang =='FR')
         {
-                //PixiApp()
-        },[])
+            langSrc.current = aboutmetext.FR
+        }
+        else
+        {
+            langSrc.current = aboutmetext.EN
+        }
         return      <div id="anchor_1" className={styles.aboutmeContainer}>
-                               <div className={styles.title}>Qui suis je ? 👋</div>
+                               <div className={styles.title}>{langSrc.current.title}</div>
                                <div className={styles.content}>
                                       <div className={styles.content_pic} >
                                                 {/* <div id="picGLass" className={styles.pic_glass}>
@@ -21,25 +30,25 @@ export function AboutMe()
                                       </div>
                                       <div className={styles.content_text} >
                                                 <div className={styles.content_text_1}>
-                                                        Moi c'est Abdel BIO, fondateur de Muséedu229. Je designe et développe 
-                                                        des sites web. Artisan du web depuis 5 ans.
+                                                            {langSrc.current.txt_1}
                                                 </div>
                                                 <div className={styles.content_text_2}>
                                                         <span className={styles.content_text_special} >Email :</span> zbio234@gmail.com
                                                 </div>
                                                 <div className={styles.content_text_3}>
-                                                        <span className={styles.content_text_special}>Résidence :</span> Cotonou
+                                                        <span className={styles.content_text_special}>{langSrc.current.txt_2}</span> Cotonou | Benin
                                                 </div>
                                       </div>
                                </div>
 
-                               <div className={styles.title_2}>Compétences 👩‍💻</div>
+                               <div className={styles.title_2}>{langSrc.current.txt_3}</div>
                                <div className={styles.content_2}>
-                                        <SkillElem imglink={'logo-html5-col.png'} />
-                                        <SkillElem imglink={'logo-js-col1.png'} />
-                                        <SkillElem imglink={'logo-react-col.png'} />
-                                        <SkillElem imglink={'logo-laravel-col.png'} />
-                                        <SkillElem imglink={'logo-nodejs.png'} />
+                                        <SkillElem imglink={'logo-html5-col.png'} link={false} desc={'Html5'} />
+                                        <SkillElem imglink={'logo-js-col1.png'} link={false}  desc={'Javascript'}/>
+                                        <SkillElem imglink={'logo-react-col.png'}  link={false} desc={'ReactJs'} />
+                                        <SkillElem imglink={'next-js-logo.svg'} link={false} desc={'NextJs'} />
+                                        <SkillElem imglink={'logo-laravel-col.png'} link={false} desc={'Laravel'} />
+                                        <SkillElem imglink={'logo-nodejs.png'} link={false} desc={'Nodejs'} />
                                         
                                         {/* <img className={styles.content_2_img} src='logohtml5.png' alt='logo'></img>
                                         <img className={styles.content_2_img} src='logojs.png' alt='logo'></img>
@@ -53,16 +62,42 @@ export function AboutMe()
          
 }
 
-function SkillElem(props)
+export function SkillElem(props)
 {
-        return(
-            <div className={styles.skillContainer}>
-                <div className={styles.skillElem}>
-                    <img className={styles.skillContainerimg} src={props.imglink} ></img>
-                </div>
-            </div>
+        let content = useRef(null);
+        let openLink = ()=>
+        {
+            window.open(props.linkUrl,'_blank')
+        }
+        if(props.link)
+        {
+            content.current = <div className={`${styles.skillContainer} ${styles.skillContainerClick} `}>
+                                <div className={styles.skillElemDesc}>
+                                    {props.desc}       
+                                </div>
+                                <div onClick={openLink} className={styles.skillElem}>
+                                    <img className={styles.skillContainerimg} src={props.imglink} ></img>
+                                </div>
+                                
+                              </div>;
+        }
+        else
+        {
+            content.current = <div className={styles.skillContainer}>
+                                <div className={styles.skillElemDesc}>
+                                    {props.desc}       
+                                </div>
+                                <div className={styles.skillElem}>
+                                    <img className={styles.skillContainerimg} src={props.imglink} ></img>
+                                    
+                                </div>
+                                
+                              </div>;
+        }
+        return content.current;
             
-        )
+            
+        
 }
 
 function PixiApp()

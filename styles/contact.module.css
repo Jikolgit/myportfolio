@@ -87,6 +87,13 @@
 {
     color: rgb(0, 142, 198);
 }
+.content_text_4
+{
+    display: flex;
+    
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
 @media (max-width: 600px) {
     .content
     {

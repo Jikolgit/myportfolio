@@ -10,6 +10,8 @@ export function MyProject()
                                      
                                      {/* <ExportElem title={"Webdu229"} desc={"Faire la promotion de la culture Béninoise à travers des jeux et applications,tel est l'objectif de Webdu229"} 
                                      imglink={'c1_1.jpeg'} sitelink={'https://webdu229.vercel.app/'}/> */}
+                                     <ExportElem title={"Neo Market"} desc={"Une solution de paiement pour la vente en ligne utilisant l'API Mobile Money de FedaPay"} 
+                                     imglink={'c1_4.png'} sitelink={'https://nmarket-online.vercel.app/'} />
                                      <ExportElem title={"Le musée du Web"} desc={"Un espace 3D vous donnant un aperçus de quelques oeuvres d'Art béninoises"} 
                                      imglink={'c1_2.jpeg'} sitelink={'https://museedu229.vercel.app/'} />
                                      <ExportElem title={"Chop Master"} desc={"Un mini Jeux 3D pour passer le temp 🕹"} 

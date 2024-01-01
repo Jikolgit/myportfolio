@@ -7,8 +7,14 @@ import { AboutMe } from '@/components/aboutme'
 import { MyProject } from '@/components/myproject'
 import { Contact } from '@/components/contact'
 import { _Footer } from '@/components/footer'
+import { createContext, useState } from 'react'
+
+
+export let indexContext = createContext();
 
 export default function Home() {
+
+  let [lang,setLang] = useState('FR');
   return (
     <>
       <Head>
@@ -17,15 +23,22 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/logoblack.png" />
       </Head>
-      <NavBar />
-      <main className={`${styles.main}`}>
-        <Banner />
-        <AboutMe />
-        <MyProject />
-        <Contact />
-        <_Footer />
-      </main>
-      <footer></footer>
+      
+      
+            <indexContext.Provider value={{lang,setLang}}>
+                <NavBar />
+                <main className={`${styles.main}`}>
+                  <Banner />
+                  <AboutMe />
+                  <MyProject />
+                  <Contact />
+                  
+                </main>
+                <footer>
+                  <_Footer />
+                </footer>
+            </indexContext.Provider>
+      
     </>
   )
 }
