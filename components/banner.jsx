@@ -9,7 +9,7 @@ import { Stage, Container, Sprite, Text, useTick } from '@pixi/react';
 export function Banner()
 {
      let activateOnce = useRef(false);
-     let texte = "Je suis Abdel BIO, développeur web Full Stack, passionné des nouvelles technologies. ";
+     let texte = " Je suis Abdel BIO, développeur web Full Stack, passionné des nouvelles technologies. ";
      let letterIndex = useRef(0);
      let textToshow = useRef("");
      let pixiAppRef = useRef(null);
