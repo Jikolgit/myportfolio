@@ -14,7 +14,7 @@ export let indexContext = createContext(vAny);
 
 export default function Home() {
 
-  let [lang,setLang] = useState('FR');
+  let [lang,setLang] = useState('EN');
   return (
     <>
       <Head>

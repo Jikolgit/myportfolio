@@ -1,20 +1,35 @@
 import styles from '@/styles/myproject.module.css'
-import Link from 'next/link'
 
+import { useCallback, useContext, useEffect, useRef, useState } from 'react';
+import { indexContext } from '@/pages/index.tsx';
+import { myprojecttext } from './text';
 export function MyProject()
 {
      
+      let valContext = useContext(indexContext);
+      let langSrc = useRef(myprojecttext.EN);
+      
+      if(valContext.lang == 'EN')
+         {
+                 
+                 langSrc.current = myprojecttext.EN;
+         }
+         else
+         {
+                 langSrc.current = myprojecttext.FR;
+         }
+
         return      <div id='anchor_2' className={styles.myProjectContainer}>
-                               <div className={styles.title}>Mes projets 👷‍♂️</div>
+                               <div className={styles.title}>{langSrc.current.title}</div>
                                <div className={styles.content}>
                                      
                                      {/* <ExportElem title={"Webdu229"} desc={"Faire la promotion de la culture Béninoise à travers des jeux et applications,tel est l'objectif de Webdu229"} 
                                      imglink={'c1_1.jpeg'} sitelink={'https://webdu229.vercel.app/'}/> */}
-                                     <ExportElem title={"Neo Market"} desc={"Une solution de paiement pour la vente en ligne utilisant l'API Mobile Money de FedaPay"} 
-                                     imglink={'c1_4.png'} sitelink={'https://nmarket-online.vercel.app/'} />
-                                     <ExportElem title={"Le musée du Web"} desc={"Un espace 3D vous donnant un aperçus de quelques oeuvres d'Art béninoises"} 
+                                     <ExportElem title={"Neo Market"} desc={langSrc.current.txt_1} sitelink={'https://nmarket-online.vercel.app/'}
+                                     imglink={'c1_4.png'} />
+                                     <ExportElem title={"Le musée du Web"} desc={langSrc.current.txt_2} 
                                      imglink={'c1_2.jpeg'} sitelink={'https://museedu229.vercel.app/'} />
-                                     <ExportElem title={"Chop Master"} desc={"Un mini Jeux 3D pour passer le temp 🕹"} 
+                                     <ExportElem title={"Chop Master"} desc={langSrc.current.txt_3} 
                                      imglink={'c1_3.png'} sitelink={'https://chopmaster.vercel.app/'} />
                                      
                                      

@@ -2,16 +2,29 @@ import styles from '@/styles/banner.module.css';
 import Link from 'next/link';
 
 import { Color, AdditiveBlending } from 'three';
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useContext, useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
 import { Stage, Container, Sprite, Text, useTick } from '@pixi/react';
-
+import { indexContext } from '@/pages/index.tsx';
+import { bannertext } from './text';
 export function Banner()
 {
-     let activateOnce = useRef(false);
+     let valContext = useContext(indexContext);
+     let langSrc = useRef(bannertext.EN);
      let texte = " Je suis Abdel BIO, développeur web Full Stack, passionné des nouvelles technologies. ";
+     if(valContext.lang == 'EN')
+        {
+                
+                langSrc.current = bannertext.EN;
+        }
+        else
+        {
+                langSrc.current = bannertext.FR;
+        }
+     let activateOnce = useRef(false);
+     texte = langSrc.current.txt_1;
      let letterIndex = useRef(0);
-     let textToshow = useRef("");
+     let textToshow = useRef(""); 
      let pixiAppRef = useRef(null);
      let [textToType,settextToType] = useState("");
      let [pixiApp,setpixiApp] = useState(null); 

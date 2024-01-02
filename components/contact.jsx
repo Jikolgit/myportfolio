@@ -1,15 +1,28 @@
 import styles from '@/styles/contact.module.css'
 import Link from 'next/link'
+import { useCallback, useContext, useEffect, useRef, useState } from 'react';
 import { SkillElem } from './aboutme'
-
+import { indexContext } from '@/pages/index.tsx';
+import { contacttext } from './text';
 export function Contact()
 {
-     
+        let valContext = useContext(indexContext);
+        let langSrc = useRef(contacttext.EN);
+        
+        if(valContext.lang == 'EN')
+           {
+                   
+                   langSrc.current = contacttext.EN;
+           }
+           else
+           {
+                   langSrc.current = contacttext.FR;
+           }
         return      <div id="anchor_3" className={styles.contactContainer}>
                                <div className={styles.title}>Contact 📞</div>
                                <div className={styles.content}>
                                       <div className={styles.content_1}>
-                                           <p>Vous pouvez me contacter par Whatsapp, Email pour tous vos besoins ou assisstance sur projet web 💪</p> 
+                                           <p>{langSrc.current.txt_1}</p> 
                                                 <div className={styles.content_text_2}>
                                                         <span className={styles.content_text_special} >Email :</span> zbio234@gmail.com
                                                 </div>

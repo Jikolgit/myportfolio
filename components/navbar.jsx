@@ -11,8 +11,8 @@ export function NavBar()
     let [navBarBackCss,setnavBarBackCss] = useState(styles.navbarBack);
     let mobileMenuOpen = useRef(false);
     let [tradIconContent,setTradIconContent] = useState("EN");
-    let langIconSrc = useRef("fricon.png");
-    let langSrc = useRef(navbartext.FR);
+    let langIconSrc = useRef("enicon.png");
+    let langSrc = useRef(navbartext.EN);
 
 
     let scrollSmooth = function (evt,to,ismobile)
