@@ -79,7 +79,7 @@ export function Banner()
                                         
                                         
                                       <div >
-                                        Je suis <span style={{color:'#e31b6d'}}>Abdel</span>, <br /> développeur fullstack <br />
+                                        Je suis <span style={{color:'#e31b6d'}}>Abdel</span>, <br /> développeur front-end <br />
                                         <div onClick={(evt)=>{scrollSmooth(evt,'#anchor_2')}} className={styles.folioButton} >
                                                 <span className={styles.folioTextButton}>Mes travaux</span>
                                                 <svg className={styles.folioIconButton} width={40} height={40} fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
