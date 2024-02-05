@@ -13,9 +13,10 @@
 
 .content
 {
+    font-family: railWaiMedium;
     margin-top: 20px;
     max-width: 900px;
-    
+    color: #616161;
     margin: 0 auto;
    
     display: flex;
@@ -32,7 +33,7 @@
     box-sizing: border-box;
     max-width: 400px;
     font-size: 1rem;
-    font-weight: bold;
+    
     padding-left: 10px;
 }
 .content_2

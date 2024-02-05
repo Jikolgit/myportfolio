@@ -32,6 +32,7 @@ export function Contact()
                                                 <div className={styles.content_text_4}>
                                                         {/* <span className={styles.content_text_special}>Tél :</span> +229 90 39 73 97 */}
                                                         <SkillElem imglink={'logowhat.png'} desc={'WhatsApp'} link={true} linkUrl={"https://wa.me/22990397397"} />
+                                                        <SkillElem imglink={'logo_linkedin.png'} desc={'LinkedIn'} link={true} linkUrl={"https://www.linkedin.com/in/abdel-z-bio-474582123/"} />
                                                         {/* <SkillElem imglink={'logo-mail.png'} desc={'Email'} link ={true} /> */}
 
                                                 </div> 
@@ -45,7 +46,7 @@ export function Contact()
 
                                             </div >
                                             <div className={styles.content_2_input_container}>
-                                                    <textarea className={styles.content_2_textarea}   rows={7} placeholder='Nom'></textarea>
+                                                    <textarea className={styles.content_2_textarea}   rows={7} placeholder='Message'></textarea>
                                             </div>
                                             <div className={styles.content_2_sendButton}>Envoyer</div>
                                       </div>

@@ -3,7 +3,8 @@
     position: relative;
     box-sizing: border-box;
     width: 100%;
-    height: 500px;
+    /* height: 500px; */
+    height: 100vh;
     color: white;
     font-size: 2rem;
     background-color: #DFDBE5;
@@ -14,14 +15,19 @@
 
 .glasscontainer
 {
-   
+    color: white;
     width: 100%;
     height: 100%;
     position: absolute;
     z-index: 2;
     top: 0;
     left: 0;
-    background-color: rgba(30, 22, 22, 0);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    font-size: 3rem;
+    background-color: rgba(205, 23, 23, 0);
 }
 .pixiContainer
 {
@@ -32,14 +38,57 @@
     top: 0;
     left: 0;
     overflow: hidden;
-    background-color: rgba(30, 22, 22, 0.342);
+    background-color: #252934;
+    /* background-color: rgba(30, 22, 22, 0.342); */
 }
-.glassText
+
+.folioTextButton
 {
-    max-width: 450px;
-    text-align: center;
     
+    letter-spacing: 0.1rem;
+    font-size: 2rem;
+    color: white;
+    transition: color 0.2s;
+}
+.folioIconButton
+{
+    transform: rotate(0);
+    stroke:white;
+    transition: transform 0.2s;
+}
+.folioButton
+{
+    cursor: pointer;
+    max-width: 260px;
     margin: 0 auto;
-    margin-top: 75px;
-    padding: 10px;
+    margin-top: 20px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    color: white;
+    border: none;
+    border: 2px solid white;
+    border-color: white;
+    background-color: transparent;
+
+    display: flex;
+    justify-content: space-around;
+    transition: background-color 0.2s , border-color 0.2s;
+}
+
+.folioButton:hover .folioIconButton
+{
+    
+    transform: rotate(90deg);
+}
+
+.folioButton:hover .folioTextButton
+{
+    
+}
+.folioButton:hover 
+{
+    border-color: #3f51b5;
+    background-color: #3f51b5;
 }

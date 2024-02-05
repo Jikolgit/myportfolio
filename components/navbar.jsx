@@ -9,6 +9,7 @@ export function NavBar()
     let valContext = useContext(indexContext);
     let [mobileMenuCss,setmobileMenuCss] = useState(styles.navbar_mobile);
     let [navBarBackCss,setnavBarBackCss] = useState(styles.navbarBack);
+    let [navBarContainerCss,setnavBarContainerCss] = useState(styles.navbarcontainer)
     let mobileMenuOpen = useRef(false);
     let [tradIconContent,setTradIconContent] = useState("EN");
     let langIconSrc = useRef("enicon.png");
@@ -61,13 +62,29 @@ export function NavBar()
                         langSrc.current = navbartext.EN;
                 }
         }
-        
+
+    useEffect(()=>
+    {
+        window.addEventListener('scroll',(evt)=>
+        {
+                
+
+                if(window.scrollY > 500)
+                {
+                        setnavBarContainerCss(`${styles.navbarcontainer} ${styles.navbarcontainerActive} `)
+                }
+                else
+                {
+                        setnavBarContainerCss(`${styles.navbarcontainer}`)
+                }
+        })
+    },[])
     return <header>
-                    <div className={styles.navbarcontainer}>
+                    <div className={navBarContainerCss}>
                             <div className={styles.navbar} >
                                     <div className={styles.logo}>
                                             <img className={styles.logo_img} src='logowhite.png' rel='logo' ></img>
-                                    </div>
+                                    </div> 
                                     <div className={styles.navbarmenu}>
                                             <ul className={styles.listul}>
                                                 <li className={styles.listli}><Link onClick={(evt)=>{scrollSmooth(evt,'#anchor_1',false)}} className={styles.listLink} href={'#'} >{langSrc.current.menu_1}</Link> </li>
@@ -77,7 +94,23 @@ export function NavBar()
                                             </ul>
                                     </div>
                                     <div onClick={(evt)=>{openMobileMenu(evt)}} className={styles.navbarmenumobile_icon}>
-                                           <img className={styles.navbarmenumobile_icon_img} src='menu.png' alt="menu"></img>
+                                           {/* <img className={styles.navbarmenumobile_icon_img} src='menu.png' alt="menu"></img> */}
+                                           {mobileMenuOpen.current?
+                                                
+                                                <svg fill="none" stroke="#ffffff" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M17.25 17.25 6.75 6.75" />
+                                                <path d="m17.25 6.75-10.5 10.5" />
+                                                </svg>
+                                                :
+                                                <svg  fill="none" stroke="#ffffff" strokeLinecap="round" strokeWidth={1} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M3.75 7.5h16.5" />
+                                                <path d="M3.75 12h16.5" />
+                                                <path d="M3.75 16.5h16.5" />
+                                                </svg>
+                                                
+                                                
+                                           }
+                                                
                                     </div>
                             </div>
                             <div  className={mobileMenuCss} >
