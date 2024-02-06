@@ -49,6 +49,7 @@ export function AboutMe()
                                         <SkillElem imglink={'next-js-logo.svg'} link={false} desc={'NextJs'} />
                                         <SkillElem imglink={'logo-laravel-col.png'} link={false} desc={'Laravel'} />
                                         <SkillElem imglink={'logo-nodejs.png'} link={false} desc={'Nodejs'} />
+                                        <SkillElem imglink={'logofigma.png'} link={false} desc={'Figma'} />
                                         
                                         {/* <img className={styles.content_2_img} src='logohtml5.png' alt='logo'></img>
                                         <img className={styles.content_2_img} src='logojs.png' alt='logo'></img>

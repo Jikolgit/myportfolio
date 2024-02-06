@@ -9,7 +9,7 @@ export function NavBar()
     let valContext = useContext(indexContext);
     let [mobileMenuCss,setmobileMenuCss] = useState(styles.navbar_mobile);
     let [navBarBackCss,setnavBarBackCss] = useState(styles.navbarBack);
-    let [navBarContainerCss,setnavBarContainerCss] = useState(styles.navbarcontainer)
+    let [navBarContainerCss,setnavBarContainerCss] = useState(styles.navbar)
     let mobileMenuOpen = useRef(false);
     let [tradIconContent,setTradIconContent] = useState("EN");
     let langIconSrc = useRef("enicon.png");
@@ -71,17 +71,17 @@ export function NavBar()
 
                 if(window.scrollY > 500)
                 {
-                        setnavBarContainerCss(`${styles.navbarcontainer} ${styles.navbarcontainerActive} `)
+                        setnavBarContainerCss(`${styles.navbar} ${styles.navbarActive} `)
                 }
                 else
                 {
-                        setnavBarContainerCss(`${styles.navbarcontainer}`)
+                        setnavBarContainerCss(`${styles.navbar}`)
                 }
         })
     },[])
     return <header>
-                    <div className={navBarContainerCss}>
-                            <div className={styles.navbar} >
+                    <div className={styles.navbarcontainer}>
+                            <div className={navBarContainerCss} >
                                     <div className={styles.logo}>
                                             <img className={styles.logo_img} src='logowhite.png' rel='logo' ></img>
                                     </div> 

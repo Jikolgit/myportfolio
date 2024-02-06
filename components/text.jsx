@@ -17,11 +17,17 @@ export var bannertext =
 {
     FR:
     {
-        txt_1:` Je suis Abdel BIO, développeur web Full Stack, passionné de création de site web et de jeux navigateur. `,
+        txt_1:`Je suis`,
+        txt_2:`Abdel`,
+        txt_3:`développeur front-end `,
+        txt_4:`Mes travaux`,
     },
     EN:
     {
-        txt_1:` I'm Abdel BIO, Full Stack web developer, passionate about website creation and browser games. `,
+        txt_1:`I'm `,
+        txt_2:`Abdel`,
+        txt_3:`front-end developper`,
+        txt_4:`My works`,
     }
 }
 export var aboutmetext = 
@@ -29,16 +35,15 @@ export var aboutmetext =
     FR:
     {
         title:'Qui suis je ? 👋',
-        txt_1:`Moi c'est Abdel BIO, fondateur de Muséedu229. Je designe et développe 
-        des sites web. Artisan du web depuis 5 ans.`,
+        txt_1:`Moi c'est Abdel BIO, je designe et développe des sites web. Artisan du web depuis 5ans`,
         txt_2:'Résidence :',
         txt_3:'Compétences 👩‍💻',
     },
     EN:
     {
         title:'About me 👋',
-        txt_1:`I'm Abdel BIO, founder of Muséedu229. I design and develop 
-        websites. Artisan of the web for 5 years.`,
+        txt_1:`I'm Abdel BIO. I design and develop 
+        websites. i'm a web artisan for 5 years.`,
         txt_2:'Location :',
         txt_3:'Skills 👩‍💻',
     }
@@ -47,14 +52,14 @@ export var myprojecttext =
 {
     FR:
     {
-        title:'Mes projets 👷‍♂️',
+        title:'Mes travaux 👷‍♂️',
         txt_1:`Une solution de paiement pour la vente en ligne utilisant l'API Mobile Money de FedaPay`,
         txt_2:`Un Musée 3D vous donnant un aperçus de quelques oeuvres d'Art béninoises`,
         txt_3:'Un mini Jeux 3D pour passer le temp 🕹',
     },
     EN:
     {
-        title:'My projects 👷‍♂️',
+        title:'My works 👷‍♂️',
         txt_1:`A payment solution for online sales using FedaPay's Mobile Money API`,
         txt_2:`A 3D Museum giving you a glimpse of some Beninese works of art`,
         txt_3:'A mini 3D game to pass the time 🕹',

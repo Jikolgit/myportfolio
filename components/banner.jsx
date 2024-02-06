@@ -79,9 +79,10 @@ export function Banner()
                                         
                                         
                                       <div >
-                                        Je suis <span style={{color:'#e31b6d'}}>Abdel</span>, <br /> développeur front-end <br />
+                                        
+                                        {langSrc.current.txt_1} <span style={{color:'#e31b6d'}}>{langSrc.current.txt_2}</span>, <br /> {langSrc.current.txt_3} <br />
                                         <div onClick={(evt)=>{scrollSmooth(evt,'#anchor_2')}} className={styles.folioButton} >
-                                                <span className={styles.folioTextButton}>Mes travaux</span>
+                                                <span className={styles.folioTextButton}>{langSrc.current.txt_4} </span>
                                                 <svg className={styles.folioIconButton} width={40} height={40} fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                                         <path d="m9 18 6-6-6-6" />
                                                 </svg>
@@ -277,7 +278,7 @@ export function CameraCompo(props)
         useEffect(()=>
         {
                 
-                console.log(camref.current)
+             
                 camref.current.lookAt(0,0,0);
                 camref.current.position.set(-55,0,0)
         }),[]

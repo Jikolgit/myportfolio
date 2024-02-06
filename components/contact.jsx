@@ -37,7 +37,7 @@ export function Contact()
 
                                                 </div> 
                                       </div>
-                                      <div className={styles.content_2}>
+                                      {/* <div className={styles.content_2}>
                                             <div className={styles.content_2_input_container}>
                                                     <input className={styles.content_2_input} type='text' placeholder='Nom'></input>
                                             </div>
@@ -49,7 +49,7 @@ export function Contact()
                                                     <textarea className={styles.content_2_textarea}   rows={7} placeholder='Message'></textarea>
                                             </div>
                                             <div className={styles.content_2_sendButton}>Envoyer</div>
-                                      </div>
+                                      </div> */}
                                </div>
 
                     </div>
