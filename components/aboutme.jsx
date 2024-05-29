@@ -29,11 +29,11 @@ export function AboutMe()
                                                 <img  className={styles.content_pic_img} src='ppic2.jpg' alt='pic'></img>
                                       </div>
                                       <div className={styles.content_text} >
-                                                <div className={styles.content_text_1}>
+                                                <div className={`text-[#616161] `}>
                                                             {langSrc.current.txt_1}
                                                 </div>
                                                 <div className={styles.content_text_2}>
-                                                        <span className={styles.content_text_special} >Email :</span> zbio234@gmail.com
+                                                        <span className={` text-[rgb(0,142,198)] font-bold`} > Email :</span> zbio234@gmail.com
                                                 </div>
                                                 <div className={styles.content_text_3}>
                                                         <span className={styles.content_text_special}>{langSrc.current.txt_2}</span> Cotonou | Benin

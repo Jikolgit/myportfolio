@@ -7,7 +7,7 @@ import { indexContext } from '@/pages/index.tsx';
 export function NavBar()
 {
     let valContext = useContext(indexContext);
-    let [mobileMenuCss,setmobileMenuCss] = useState(styles.navbar_mobile);
+//     let [mobileMenuCss,setmobileMenuCss] = useState(styles.navbar_mobile); 
     let [navBarBackCss,setnavBarBackCss] = useState(styles.navbarBack);
     let [navBarContainerCss,setnavBarContainerCss] = useState(styles.navbar)
     let mobileMenuOpen = useRef(false);
@@ -33,13 +33,13 @@ export function NavBar()
                 
                 if(!mobileMenuOpen.current)
                 {
-                        setmobileMenuCss(c => c = `${styles.navbar_mobile} ${styles.navbar_mobile_open}`)
+                        // setmobileMenuCss(c => c = `${styles.navbar_mobile} ${styles.navbar_mobile_open}`)
                         setnavBarBackCss(c => c = `${styles.navbarBack} ${styles.navbarBack_visible}`)
 
                 }
                 else
                 {
-                        setmobileMenuCss(c => c =  `${styles.navbar_mobile}`)
+                        // setmobileMenuCss(c => c =  `${styles.navbar_mobile}`)
                         setnavBarBackCss(c => c = `${styles.navbarBack}`)
 
                 }
@@ -113,7 +113,10 @@ export function NavBar()
                                                 
                                     </div>
                             </div>
-                            <div  className={mobileMenuCss} >
+                            <div  className={`absolute w-full max-w-[1500px] 
+                                              ${mobileMenuOpen.current? 'top-[50px]':'top-[-220px]'}
+                                              left-[0] right-[0] mx-auto flex justify-between bg-[#17234D] z-[2]
+                                              transition-[top] duration-[200ms] `} >
                                     <div  className={styles.navbarmenu_mobile}>
                                             <ul className={styles.listul_mobile}>
                                                 <li className={styles.listli_mobile}> <Link onClick={(evt)=>{scrollSmooth(evt,'#anchor_1',true)}} className={styles.listLink} href={'#'} >{langSrc.current.menu_1}</Link> </li>
