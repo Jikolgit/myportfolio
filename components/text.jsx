@@ -56,6 +56,9 @@ export var myprojecttext =
         txt_1:`Une solution de paiement pour la vente en ligne utilisant l'API Mobile Money de FedaPay`,
         txt_2:`Un Musée 3D vous donnant un aperçus de quelques oeuvres d'Art béninoises`,
         txt_3:'Un mini Jeux 3D pour passer le temp 🕹',
+        txt_4:`Explorez une mine d'afrique et découvrez les secrets qui s'y cachent`,
+        txt_5:`Un runner urbain en 3D`,
+        txt_6:`Vous incarnez une nouvelle recrure dans l'armée du Dahomey`
     },
     EN:
     {
@@ -63,6 +66,9 @@ export var myprojecttext =
         txt_1:`A payment solution for online sales using FedaPay's Mobile Money API`,
         txt_2:`A 3D Museum giving you a glimpse of some Beninese works of art`,
         txt_3:'A mini 3D game to pass the time 🕹',
+        txt_4:`Explore an African mine and discover the secrets hidden there`,
+        txt_5:`A 3D urban runner`,
+        txt_6:`Vous incarnez une nouvelle recrure dans l'armée du Dahomey`
     }
 }
 

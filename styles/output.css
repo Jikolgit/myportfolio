@@ -610,16 +610,16 @@ video {
   display: grid;
 }
 
-.h-\[400px\] {
-  height: 400px;
-}
-
-.h-full {
-  height: 100%;
+.hidden {
+  display: none;
 }
 
 .h-\[350px\] {
   height: 350px;
+}
+
+.h-full {
+  height: 100%;
 }
 
 .w-full {
