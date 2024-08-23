@@ -47,6 +47,8 @@ export function MyProject()
                                      imglink={'stickjumpCover.png'} sitelink={'https://stickjumpr3f.vercel.app/'} />
                                      <ExportElem title={"Dahomey Warrior"} desc={langSrc.current.txt_6} 
                                      imglink={'dwarriorCover.png'} sitelink={'https://dwarriorr3f.vercel.app/'} />
+                                     <ExportElem title={"BavardApp"} desc={langSrc.current.txt_7} 
+                                     imglink={'bavardAppCover.png'} sitelink={'https://bavardapp.vercel.app/'} />
                                     
                                     
 

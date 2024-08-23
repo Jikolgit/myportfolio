@@ -58,7 +58,8 @@ export var myprojecttext =
         txt_3:'Un mini Jeux 3D pour passer le temp 🕹',
         txt_4:`Explorez une mine d'afrique et découvrez les secrets qui s'y cachent`,
         txt_5:`Un runner urbain en 3D`,
-        txt_6:`Vous incarnez une nouvelle recrure dans l'armée du Dahomey`
+        txt_6:`Vous incarnez une nouvelle recrure dans l'armée du Dahomey`,
+        txt_7:`Une Application web de discussion générale`
     },
     EN:
     {
@@ -68,7 +69,8 @@ export var myprojecttext =
         txt_3:'A mini 3D game to pass the time 🕹',
         txt_4:`Explore an African mine and discover the secrets hidden there`,
         txt_5:`A 3D urban runner`,
-        txt_6:`Vous incarnez une nouvelle recrure dans l'armée du Dahomey`
+        txt_6:`You play as a new recruit in the Dahomey army`,
+        txt_7:`A general discussion web application`
     }
 }
 
