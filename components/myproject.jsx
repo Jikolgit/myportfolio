@@ -40,7 +40,7 @@ export function MyProject()
                                      <ExportElem title={"Le musée du Web"} desc={langSrc.current.txt_2} 
                                      imglink={'c1_2.jpeg'} sitelink={'https://museedu229.vercel.app/'} />
                                      <ExportElem title={"Chop Master"} desc={langSrc.current.txt_3} 
-                                     imglink={'c1_3.png'} sitelink={'https://chopmaster.vercel.app/'} />
+                                     imglink={'c1_3.png'} sitelink={'https://chopr3f.vercel.app/'} />
                                      <ExportElem title={"Excavation"} desc={langSrc.current.txt_4} 
                                      imglink={'excavationCover.png'} sitelink={'https://excavation.vercel.app/'} />
                                      <ExportElem title={"Stick Jump"} desc={langSrc.current.txt_5} 
