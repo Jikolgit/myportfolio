@@ -89,18 +89,72 @@ export function Banner()
                                         </div>
                                       </div>  
                                 </div>
-                                <div ref={pixiAppRef} className={styles.pixiContainer}>
-                                        <Canvas>
-                                                {/* <axesHelper args={[5]} /> */}
+                                <div ref={pixiAppRef} 
+                                className={`w-full h-full bg-[#252934] absolute z-[1] left-[0] top-[0] overflow-hidden `}
+                                >
+                                        {/* <Canvas>
                                                 <Model />
                                                 <CameraCompo />
-                                        </Canvas>
+                                        </Canvas> */}
                                         {/* {pixiApp} */}
+                                        <CreateHorizontalLine number={20} />
                                 </div>
                     </div>
          
 }
 
+function CreateHorizontalLine(props)
+{
+        let horizontallineContainer = useRef([]);
+        let verticallineContainer = useRef([]);
+        let spread = 70
+        for(let i =0;i < props.number;i++)
+        {       
+                horizontallineContainer.current[i] =  <HorizontalLine key={i} top={(i+1)*spread} />
+        }
+        for(let i =0;i < props.number;i++)
+        {       
+                verticallineContainer.current[i] =  <VerticalLine key={i} left={(i+1)*spread} />
+        }
+        return(
+                <>
+                        {horizontallineContainer.current}
+                        {verticallineContainer.current}
+                </>
+        )
+}
+
+function HorizontalLine(props)
+{
+        const LineContainerRef = useRef(null);
+        const LineRef = useRef(null);
+        let lineDistance = useRef(0);
+        useEffect(()=>
+                {
+                        lineDistance = LineContainerRef.current.clientWidth
+                        
+
+                        //RECUPERER LA FONCTION ET FAIRE BOUGER LA LIGNE AVEC TRANSFORM
+                },[])
+        return(
+                <>
+                        <div style={{top:props.top}} ref={LineContainerRef} className={`absolute z-[2] left-[0] w-full h-[2px] bg-black/20 `}>
+                                <div ref={LineRef} style={{transform:'translateX(10px) ',transitionDuration:'10s'}} className="transition-[transform] h-full w-[50px] bg-gradient-to-l from-white ">
+
+                                </div>
+                        </div>
+                </>
+        )
+}
+function VerticalLine(props)
+{
+        
+        return(
+                <>
+                        <div style={{left:props.left}} className={`absolute z-[2] top-[0] w-[2px] h-full bg-black/20 `}></div>
+                </>
+        )
+}
 function PixiApp(props)
 {
         let _width = props.containerRef.current.clientWidth;

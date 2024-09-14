@@ -3,7 +3,7 @@ import Image from 'next/image'
 import styles from '@/styles/Home.module.css'
 import { NavBar } from '@/components/navbar'
 import { Banner } from '@/components/banner'
-import { AboutMe } from '@/components/aboutme'
+import { AboutMe, WhatCanIDo } from '@/components/aboutme'
 import { MyProject } from '@/components/myproject'
 import { Contact } from '@/components/contact'
 import { _Footer } from '@/components/footer'
@@ -30,6 +30,7 @@ export default function Home() {
                 <main className={`${styles.main}`}>
                   <Banner />
                   <AboutMe />
+                  {/* <WhatCanIDo /> */}
                   <MyProject />
                   <Contact />
                   

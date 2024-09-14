@@ -12,6 +12,7 @@ module.exports = {
       'max1220': {'max': '1220px'},
       'max850': {'max': '850px'},
       'max600': {'max': '600px'},
+      'max670': {'max': '670px'},
       // => @media (min-width: 640px) { ... }
 
       // 'md': {'max': '465px'},
