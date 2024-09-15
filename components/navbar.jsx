@@ -82,7 +82,7 @@ export function NavBar()
     return <header>
                     <div className={styles.navbarcontainer}>
                             <div className={navBarContainerCss} >
-                                    <div className={styles.logo}>
+                                    <div className={styles.logo}> 
                                             <img className={styles.logo_img} src='logowhite.png' rel='logo' ></img>
                                     </div> 
                                     <div className={styles.navbarmenu}>

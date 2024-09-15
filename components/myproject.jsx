@@ -76,7 +76,16 @@ export function MyProject()
 function ExportElem(props)
 {
             
-            let [showDesc,setShowDesc] = useState(false)
+            let [showDesc,setShowDesc] = useState(false);
+            const [EnterElem,setEnterElem] = useState(false)
+            let enterAnime = ()=>
+                {
+                    setEnterElem(true)
+                }
+            let leaveAnime = ()=>
+                {
+                    setEnterElem(false)
+                }
               return    <>
 
                               <div
@@ -85,12 +94,29 @@ function ExportElem(props)
                                           <div
                                           onMouseOver={()=>{setShowDesc(true); }} 
                                           onMouseOut={()=>{setShowDesc(false); }} 
-                                                className={`w-full h-full `}
+                                          onMouseEnter={enterAnime} onMouseLeave={leaveAnime}
+                                                className={`w-full h-full relative `}
                                           >
+                                                      <svg className={`${EnterElem? 'scale-0':'scale-100'} transition-scale duration-[500ms] absolute left-[-12px] top-[-12px] z-[2]`} width={24} height={24} fill="none" stroke="#000000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M12 5v14" />
+                                                            <path d="M5 12h14" />
+                                                      </svg>
+                                                      <svg className={`${EnterElem? 'scale-100':'scale-0'} transition-scale duration-[500ms] absolute left-[-12px] bottom-[-12px] z-[2]`} width={24} height={24} fill="none" stroke="#000000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M12 5v14" />
+                                                            <path d="M5 12h14" />
+                                                      </svg>
+                                                      <svg className={`${EnterElem? 'scale-100':'scale-0'} transition-scale duration-[500ms] absolute right-[-12px] top-[-12px] z-[2]`} width={24} height={24} fill="none" stroke="#000000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M12 5v14" />
+                                                            <path d="M5 12h14" />
+                                                      </svg>
+                                                      <svg className={`${EnterElem? 'scale-0':'scale-100'} transition-scale duration-[500ms] absolute right-[-12px] bottom-[-12px] z-[2]`} width={24} height={24} fill="none" stroke="#000000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M12 5v14" />
+                                                            <path d="M5 12h14" />
+                                                      </svg>
                                                       <div 
                                                       
                                                       className={`w-full h-full relative overflow-hidden `}>
-                                                            <div
+                                                            {/* <div
                                                             
                                                             className={`w-full h-full absolute bg-[#17234dbf]
                                                                            ${showDesc? 'bottom-[0]' : 'bottom-[-100%]'}
@@ -111,6 +137,24 @@ function ExportElem(props)
                                                                               <a className={styles.content_elem_1_button_link} target='_blank' href={props.sitelink} >Voir</a>
                                                                         </div>
                                                                   </div>
+                                                            </div> */}
+                                                            <div className="w-full h-full absolute left-[0] top-[0] bg-white/90 transition duration-[250ms] blur-none opacity-0 hover:opacity-100 
+                                                                            flex flex-col justify-center border-[1px] border-black/40  ">
+                                                                  <p>
+                                                                              
+                                                                                    <p className={'text-black text-center text-[1.5rem] '}>
+                                                                                          {props.title}
+                                                                                    </p>
+                                                                                    <p className={'text-black text-center'}>
+                                                                                          {props.desc}
+                                                                                    </p>
+                                                                              
+                                                                              <p className={'text-black text-center mt-[30px] '}>
+                                                                                    
+                                                                                          <a className={'py-[10px] px-[25px] font-bold bg-black text-white tracking-[3px] '} target='_blank' href={props.sitelink} >Voir</a>
+                                                                                    
+                                                                              </p>
+                                                                  </p>
                                                             </div>
                                                             <img className={`w-full h-full`} src={props.imglink} ></img>
                                                       </div>

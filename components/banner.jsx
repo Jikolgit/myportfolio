@@ -9,6 +9,7 @@ import { indexContext } from '@/pages/index.tsx';
 import { bannertext } from './text';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, PerspectiveCamera } from '@react-three/drei';
+import { CustomCounter } from './utils';
 export function Banner()
 {
      let valContext = useContext(indexContext);
@@ -107,17 +108,23 @@ function CreateHorizontalLine(props)
 {
         let horizontallineContainer = useRef([]);
         let verticallineContainer = useRef([]);
-        let spread = 70
+        let horizontallinePathContainer = useRef([]);
+        let verticallinePathContainer = useRef([]);
+        let spread = 70;
         for(let i =0;i < props.number;i++)
         {       
-                horizontallineContainer.current[i] =  <HorizontalLine key={i} top={(i+1)*spread} />
+                horizontallineContainer.current[i] =  <HorizontalLine key={i} top={(i+1)*spread} color={Math.floor((Math.random()*3)+1)} />
+                horizontallinePathContainer.current[i] = <HorizontalLinePath key={i} top={(i+1)*spread} />
         }
         for(let i =0;i < props.number;i++)
         {       
-                verticallineContainer.current[i] =  <VerticalLine key={i} left={(i+1)*spread} />
+                verticallineContainer.current[i] =  <VerticalLine key={i} left={(i+1)*spread} color={Math.floor((Math.random()*3)+1)}  />
+                verticallinePathContainer.current[i] = <VerticalLinePath key={i} left={(i+1)*spread}  />
         }
         return(
                 <>
+                        {horizontallinePathContainer.current}
+                        {verticallinePathContainer.current}
                         {horizontallineContainer.current}
                         {verticallineContainer.current}
                 </>
@@ -128,32 +135,129 @@ function HorizontalLine(props)
 {
         const LineContainerRef = useRef(null);
         const LineRef = useRef(null);
+        let lineDistanceOriginal = useRef(0);
         let lineDistance = useRef(0);
+        let translateDistance = useRef(0);
+        let speed = useRef((Math.random())+0.1)
+        let color = 'from-red-500/50';
+        if(props.color == 1){color = 'from-red-500/50'}
+        else if(props.color == 2){color = 'from-green-500/50'}
+        else if(props.color == 3){color = 'from-blue-500/50'}
+        let moveLine = ()=>
+                {
+                        
+                        lineDistance.current -= speed.current;
+                        
+                        translateDistance.current += speed.current;
+                        
+                        LineRef.current.style.transform = 'translateX('+translateDistance.current+'px)';
+                        
+                        if(lineDistance.current <= 0)
+                        {
+                                speed.current = (Math.random())+0.1
+                                lineDistance.current = structuredClone(lineDistanceOriginal.current);
+                                lineDistance.current += (Math.random()*150)+50;
+                                
+                                translateDistance.current = 0;
+                        }
+                        
+                        return false
+                }
+                
         useEffect(()=>
                 {
-                        lineDistance = LineContainerRef.current.clientWidth
-                        
+                        lineDistanceOriginal.current = LineContainerRef.current.clientWidth + 100;
+                        lineDistance.current = structuredClone(lineDistanceOriginal.current);
 
+                        
+                        let customCounter = new CustomCounter(1,0,moveLine,null);
+                        // customCounter.start();
+                        let startCounter = new CustomCounter(Math.floor((Math.random()*151)+10),0,()=>{customCounter.start();return true;},null);
+                        startCounter.start();
                         //RECUPERER LA FONCTION ET FAIRE BOUGER LA LIGNE AVEC TRANSFORM
+                        return()=>{customCounter.cancelCounter()}
                 },[])
         return(
                 <>
-                        <div style={{top:props.top}} ref={LineContainerRef} className={`absolute z-[2] left-[0] w-full h-[2px] bg-black/20 `}>
-                                <div ref={LineRef} style={{transform:'translateX(10px) ',transitionDuration:'10s'}} className="transition-[transform] h-full w-[50px] bg-gradient-to-l from-white ">
+                        <div style={{top:props.top}} ref={LineContainerRef} className={`absolute z-[2] left-[0] w-full h-[2px] `}>
+                                <div ref={LineRef} className={` h-full w-[50px] ml-[-120px] bg-gradient-to-l from-blue-500/50 `}>
 
                                 </div>
                         </div>
                 </>
         )
 }
+
+
 function VerticalLine(props)
 {
+        const LineContainerRef = useRef(null);
+        const LineRef = useRef(null);
+        let lineDistanceOriginal = useRef(0);
+        let lineDistance = useRef(0);
+        let translateDistance = useRef(0);
+        let speed = useRef((Math.random())+0.1);
+        let color = 'from-red-500/50';
+        if(props.color == 1){color = 'from-red-500/50'}
+        else if(props.color == 2){color = 'from-green-500/50'}
+        else if(props.color == 3){color = 'from-blue-500/50'}
         
+        let moveLine = ()=>
+                {
+                        
+                        lineDistance.current -= speed.current;
+                        
+                        translateDistance.current += speed.current;
+                        
+                        LineRef.current.style.transform = 'translateY('+translateDistance.current+'px)';
+                        
+                        if(lineDistance.current <= 0)
+                        {
+                                speed.current = (Math.random())+0.1
+                                lineDistance.current = structuredClone(lineDistanceOriginal.current);
+                                lineDistance.current += (Math.random()*150)+50;
+                                translateDistance.current = 0;
+                        }
+                        
+                        return false
+                }
+                
+        useEffect(()=>
+                {
+                        lineDistanceOriginal.current = LineContainerRef.current.clientHeight + 100;
+                        lineDistance.current = structuredClone(lineDistanceOriginal.current);
+                        let customCounter = new CustomCounter(1,0,moveLine,null);
+                        // customCounter.start();
+                        let startCounter = new CustomCounter(Math.floor((Math.random()*151)+10),0,()=>{customCounter.start();return true;},null);
+                        startCounter.start();
+                        //RECUPERER LA FONCTION ET FAIRE BOUGER LA LIGNE AVEC TRANSFORM
+                        return()=>{customCounter.cancelCounter()}
+                },[])
         return(
                 <>
-                        <div style={{left:props.left}} className={`absolute z-[2] top-[0] w-[2px] h-full bg-black/20 `}></div>
+                        <div style={{left:props.left}} ref={LineContainerRef} className={`absolute z-[2] top-[0] w-[2px] h-full `}>
+                                <div ref={LineRef}  className={` h-[50px] mt-[-120px] w-full bg-gradient-to-t from-blue-500/50 `}>
+
+                                </div>
+                        </div>
                 </>
         )
+}
+function VerticalLinePath(props)
+{
+        return(
+                <>
+                        <div style={{left:props.left}} className={`absolute z-[1] top-[0] w-[2px] h-full bg-black/20 `}></div>
+                </>
+        )    
+}
+function HorizontalLinePath(props)
+{
+        return(
+                <>
+                        <div style={{top:props.top}} className={`absolute z-[1] left-[0] w-full h-[2px] bg-black/20 `}></div>
+                </>
+        )    
 }
 function PixiApp(props)
 {

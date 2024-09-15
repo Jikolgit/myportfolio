@@ -34,25 +34,25 @@ export var aboutmetext =
 {
     FR:
     {
-        title:'Qui suis je ? 👋',
+        title:'Qui suis je ?',
         txt_1:`Moi c'est Abdel BIO, je designe et développe des sites web. Artisan du web depuis 5ans`,
         txt_2:'Résidence :',
-        txt_3:'Compétences 👩‍💻',
+        txt_3:'Compétences',
     },
     EN:
     {
-        title:'About me 👋',
+        title:'About me',
         txt_1:`I'm Abdel BIO. I design and develop 
         websites. i'm a web artisan for 5 years.`,
         txt_2:'Location :',
-        txt_3:'Skills 👩‍💻',
+        txt_3:'Skills ',
     }
 }
 export var myprojecttext = 
 {
     FR:
     {
-        title:'Mes travaux 👷‍♂️',
+        title:'Mes travaux',
         txt_1:`Une solution de paiement pour la vente en ligne utilisant l'API Mobile Money de FedaPay`,
         txt_2:`Un Musée 3D vous donnant un aperçus de quelques oeuvres d'Art béninoises`,
         txt_3:'Un mini Jeux 3D pour passer le temp 🕹',
@@ -63,7 +63,7 @@ export var myprojecttext =
     },
     EN:
     {
-        title:'My works 👷‍♂️',
+        title:'My works',
         txt_1:`A payment solution for online sales using FedaPay's Mobile Money API`,
         txt_2:`A 3D Museum giving you a glimpse of some Beninese works of art`,
         txt_3:'A mini 3D game to pass the time 🕹',

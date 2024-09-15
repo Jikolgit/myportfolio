@@ -48,7 +48,8 @@
 .navbarActive
 {
 
-    background-color: #17234D;
+    background-color: #252934;
+    
 
 }
 .navbar_mobile
@@ -63,7 +64,7 @@
     margin-right: auto;
     display: flex;
     justify-content: space-between;
-    background-color: #17234D;
+    background-color: #252934;
     z-index: 2;
     transition: top 0.5s;
 }
