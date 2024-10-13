@@ -4,10 +4,10 @@ import styles from '@/styles/Home.module.css'
 import { NavBar } from '@/components/navbar'
 import { Banner } from '@/components/banner'
 import { AboutMe, WhatCanIDo } from '@/components/aboutme'
-import { MyProject } from '@/components/myproject'
+import { DescriptionElem, MyProject } from '@/components/myproject'
 import { Contact } from '@/components/contact'
 import { _Footer } from '@/components/footer'
-import { createContext, useState } from 'react'
+import { createContext, useRef, useState } from 'react'
 
 let vAny: any = null;
 export let indexContext = createContext(vAny);
@@ -15,6 +15,8 @@ export let indexContext = createContext(vAny);
 export default function Home() {
 
   let [lang,setLang] = useState('EN');
+  let descriptionObj = useRef({coverSrc:null,title:null,desc:null,tools:[],siteLink:null});
+  let [showDescription,setShowDescription] = useState(false);
   return (
     <>
       <Head>
@@ -25,7 +27,7 @@ export default function Home() {
       </Head>
       
       
-            <indexContext.Provider value={{lang,setLang}}>
+            <indexContext.Provider value={{lang,setLang,showDescription,setShowDescription,descriptionObj}}>
                 <NavBar />
                 <main className={`${styles.main}`}>
                   <Banner />
@@ -35,9 +37,9 @@ export default function Home() {
                   <Contact />
                   
                 </main>
-                <footer>
-                  <_Footer />
-                </footer>
+                {showDescription && <DescriptionElem />}
+                <_Footer />
+               
             </indexContext.Provider>
       
     </>
