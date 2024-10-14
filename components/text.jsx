@@ -19,14 +19,14 @@ export var bannertext =
     {
         txt_1:`Je suis`,
         txt_2:`Abdel`,
-        txt_3:`développeur front-end `,
+        txt_3:`développeur web front-end `,
         txt_4:`Mes travaux`,
     },
     EN:
     {
         txt_1:`I'm `,
         txt_2:`Abdel`,
-        txt_3:`front-end developper`,
+        txt_3:`frontend web developper`,
         txt_4:`My works`,
     }
 }
@@ -35,7 +35,7 @@ export var aboutmetext =
     FR:
     {
         title:'Qui suis je ?',
-        txt_1:`Moi c'est Abdel BIO, je designe et développe des sites web. Artisan du web depuis 5ans`,
+        txt_1:`Moi c'est Abdel BIO, je designe et développe des sites web.`,
         txt_2:'Résidence :',
         txt_3:'Compétences',
     },
@@ -43,7 +43,7 @@ export var aboutmetext =
     {
         title:'About me',
         txt_1:`I'm Abdel BIO. I design and develop 
-        websites. i'm a web artisan for 5 years.`,
+        websites.`,
         txt_2:'Location :',
         txt_3:'Skills ',
     }
